@@ -14,6 +14,10 @@ ATAC-seq data quality was assessed with fastqc. Adapter sequences were trimmed u
 
 The folder "image_j_macros" contains ImageJ macros used in the manuscript and was duplicated from https://github.com/chiehrenhsia/ConfinedMigration 
 
+Important notes:
+1. Scripts are written for .czi (Zeiss microscopic images) confocal images containing z-stacks and multichannels.  
+2. Channels are defined at the start of the scripts. Please modify according to your input files.  
+
 To quantify normalized heterochromatin values, nuclear areas were selected by thresholding using the median-filtered DAPI channel. Mean grey intensity of the heterochromatin mark (H3K9me3 or H3K27me3) and the euchromatin mark (H3K9ac) were quantified, and the heterochromatin intensity was divided by the euchromatin intensity to obtain normalized heterochromatin values. Apoptotic fragments and overlapped nuclei were manually excluded from the dataset. Experiments with high variability of cell seeding between control and experimental groups were excluded. For all other quantification of staining intensities, nuclear areas were selected by thresholding using the median-filtered DAPI channel (or comparable nuclear signal when DAPI was not available), and mean grey intensities of channels of interests were quantified. All staining thresholding and quantification were performed through custom ImageJ Macros to ensure consistency and reproducibility. For generation of normalized heterochromatin images, the heterochromatin mark channel (H3K9me3 or H3K27me3) was divided by the euchromatin mark (H3K9ac) channel using the “image calculator” function in ImageJ. In the euchromatin (H3K9ac) channel, pixels with 0 value were converted to 1 to ensure division without errors. The normalized image was then median-filtered and a nuclear mask of median-filtered DAPI channel was applied to exclude artifacts of non-nuclear background noise. 
 
 
